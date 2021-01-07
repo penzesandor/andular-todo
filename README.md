@@ -7,6 +7,7 @@ Users can:
 - add a new TODO item to a list
 - delete any item from a list
 - see the list of items they have added
+- todo list is stored in localStorage
 
 ## Development server
 

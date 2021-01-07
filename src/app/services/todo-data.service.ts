@@ -1,13 +1,16 @@
 import { Injectable } from '@angular/core';
+import { LocalStorageService } from './local-storage.service';
 import { TodoItem } from './../interfaces/todo-item';
 
 @Injectable({
   providedIn: 'root',
 })
 export class TodoDataService {
-  todoList: TodoItem[] = [];
+  todoList: TodoItem[];
 
-  constructor() {}
+  constructor(private localStorageService: LocalStorageService) {
+    this.todoList = localStorageService.loadList();
+  }
 
   generateId() {
     if (!this.todoList) {
@@ -31,6 +34,7 @@ export class TodoDataService {
       title: title,
     };
     this.todoList.push(todoItem);
+    this.localStorageService.saveList(this.todoList);
   }
 
   getTodoList() {
@@ -40,5 +44,6 @@ export class TodoDataService {
   removeTodoItem(id: number) {
     const index = this.todoList.findIndex((todoItem) => todoItem.id === id);
     index !== -1 && this.todoList.splice(index, 1);
+    this.localStorageService.saveList(this.todoList);
   }
 }

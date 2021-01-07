@@ -1,10 +1,7 @@
 import { TestBed, inject } from '@angular/core/testing';
-
 import { TodoDataService } from './todo-data.service';
 
 describe('TodoDataService', () => {
-  let service: TodoDataService;
-
   beforeEach(() => {
     TestBed.configureTestingModule({
       providers: [TodoDataService],
