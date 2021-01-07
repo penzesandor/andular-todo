@@ -1,0 +1,6 @@
+<input
+  #todoInput
+  placeholder="What needs to be done"
+  (keyup.enter)="addTodoItem($event.target.value)"
+  [(ngModel)]='todoTitle'>
+<button (click)="addTodoItem(todoInput.value)">Add</button>
