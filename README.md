@@ -7,7 +7,9 @@ Users can:
 - add a new TODO item to a list
 - delete any item from a list
 - see the list of items they have added
-- todo list is stored in localStorage
+- move todo items with d&d
+
+Todo list is automatically saved to localStorage.
 
 ## Development server
 

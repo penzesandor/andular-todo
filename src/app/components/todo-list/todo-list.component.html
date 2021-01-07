@@ -1,8 +1,10 @@
 <app-todo-field (addTodo)="addTodoItem($event)"></app-todo-field>
 
-<div *ngFor="let todoItem of todoList">
-  <app-todo-item
-    [todoItem]="todoItem"
-    (removeTodo)="removeTodoItem($event)"
-  ></app-todo-item>
+<div cdkDropList (cdkDropListDropped)="drop($event)">
+  <div *ngFor="let todoItem of todoList" cdkDrag>
+    <app-todo-item
+      [todoItem]="todoItem"
+      (removeTodo)="removeTodoItem($event)"
+    ></app-todo-item>
+  </div>
 </div>
