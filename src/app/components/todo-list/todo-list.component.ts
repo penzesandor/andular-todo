@@ -20,7 +20,7 @@ export class TodoListComponent implements OnInit {
     this.todoDataService.addTodoItem(title);
   }
 
-  removeTodoItem(todoItem: TodoItem) {
-    this.todoDataService.removeTodoItem(todoItem);
+  removeTodoItem(id: number) {
+    this.todoDataService.removeTodoItem(id);
   }
 }

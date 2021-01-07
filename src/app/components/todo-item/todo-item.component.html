@@ -1,4 +1,4 @@
-<div>
+<div *ngIf="todoItem">
   <span>{{ todoItem.title }}</span>
-  <button (click)="removeTodoItem()" >DEL</button>
+  <button (click)="removeTodoItem()">DEL</button>
 </div>
