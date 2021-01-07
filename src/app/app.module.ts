@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { DragDropModule } from '@angular/cdk/drag-drop';
 
 import { AppComponent } from './app.component';
 import { TodoFieldComponent } from './components/todo-field/todo-field.component';
@@ -14,7 +15,7 @@ import { TodoListComponent } from './components/todo-list/todo-list.component';
     TodoItemComponent,
     TodoListComponent,
   ],
-  imports: [BrowserModule, FormsModule],
+  imports: [BrowserModule, FormsModule, DragDropModule],
   providers: [],
   bootstrap: [AppComponent],
 })
