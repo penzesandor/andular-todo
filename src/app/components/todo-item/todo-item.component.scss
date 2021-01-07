@@ -1,1 +1,13 @@
+.todo-items {
+  padding: 10px;
+  border-top: solid 1px #ddd;
+  min-height: 30px;
+  line-height: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
+.fa-trash {
+  color: #136e42; // copied from https://www.crosskey.io/
+}

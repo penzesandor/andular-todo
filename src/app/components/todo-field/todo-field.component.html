@@ -1,6 +1,13 @@
-<input
-  #todoInput
-  placeholder="What needs to be done?"
-  (keyup.enter)="addTodoItem($event.target.value)"
-  [(ngModel)]='todoTitle'>
-<button (click)="addTodoItem(todoInput.value)">Add</button>
+<div class="input-group input-group-lg mb-4">
+  <input
+    type="text"
+    class="form-control"
+    #todoInput
+    placeholder="What needs to be done?"
+    (keyup.enter)="addTodoItem($event.target.value)"
+    [(ngModel)]='todoTitle'>
+
+  <div class="input-group-append hover-cursor" (click)="addTodoItem(todoInput.value)">
+    <span class="input-group-text"><i class="fa fa-plus-circle fa-lg"></i></span>
+  </div>
+</div>

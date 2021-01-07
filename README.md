@@ -1,6 +1,12 @@
 # AngularTodo
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.1.7.
+This is a single todo application generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.1.7.
+
+Users can:
+
+- add a new TODO item to a list
+- delete any item from a list
+- see the list of items they have added
 
 ## Development server
 
