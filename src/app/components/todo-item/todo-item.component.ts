@@ -8,13 +8,13 @@ import { TodoItem } from './../../interfaces/todo-item';
 })
 export class TodoItemComponent implements OnInit {
   @Input() todoItem: TodoItem;
-  @Output() removeTodo: EventEmitter<TodoItem> = new EventEmitter();
+  @Output() removeTodo: EventEmitter<number> = new EventEmitter();
 
   constructor() {}
 
   ngOnInit(): void {}
 
   removeTodoItem() {
-    this.removeTodo.emit(this.todoItem);
+    this.removeTodo.emit(this.todoItem.id);
   }
 }

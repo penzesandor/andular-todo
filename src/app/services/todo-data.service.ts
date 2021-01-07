@@ -7,28 +7,14 @@ import { TodoItem } from './../interfaces/todo-item';
 export class TodoDataService {
   todoList: TodoItem[] = [];
 
-  constructor() {
-    const defaultTodoList = [
-      {
-        id: 1,
-        title: 'do the shopping',
-        completed: false,
-      },
-      {
-        id: 2,
-        title: 'wash the car',
-        completed: false,
-      },
-    ];
-    this.todoList = defaultTodoList;
-  }
+  constructor() {}
 
-  generateId(todos: TodoItem[]) {
-    if (!todos) {
+  generateId() {
+    if (!this.todoList) {
       return 0;
     }
 
-    let maxId = todos.reduce(
+    let maxId = this.todoList.reduce(
       (maxId, todo) => (todo.id > maxId ? todo.id : maxId),
       0
     );
@@ -41,9 +27,8 @@ export class TodoDataService {
     }
 
     const todoItem = {
-      id: this.generateId(this.todoList),
+      id: this.generateId(),
       title: title,
-      completed: false,
     };
     this.todoList.push(todoItem);
   }
@@ -52,8 +37,8 @@ export class TodoDataService {
     return this.todoList;
   }
 
-  removeTodoItem(todoItem: TodoItem) {
-    const index = this.todoList.indexOf(todoItem);
-    this.todoList.splice(index, 1);
+  removeTodoItem(id: number) {
+    const index = this.todoList.findIndex((todoItem) => todoItem.id === id);
+    index !== -1 && this.todoList.splice(index, 1);
   }
 }
