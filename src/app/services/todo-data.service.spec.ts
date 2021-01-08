@@ -1,13 +1,14 @@
+import { LocalStorageService } from './local-storage.service';
 import { TestBed, inject } from '@angular/core/testing';
 import { TodoDataService } from './todo-data.service';
 
-describe('TodoDataService', () => {
-  beforeEach(() => {
-    TestBed.configureTestingModule({
-      providers: [TodoDataService],
-    });
-  });
+const storageKey = 'localStorageTodoList';
 
+beforeEach(() => {
+  localStorage.setItem(storageKey, JSON.stringify([]));
+});
+
+describe('TodoDataService', () => {
   it('should be created', inject(
     [TodoDataService],
     (service: TodoDataService) => {
@@ -37,7 +38,7 @@ describe('getTodoList function', () => {
 });
 
 describe('addTodoItem function', () => {
-  it('should todos to the todo list', inject(
+  it('should add todos to the todo list', inject(
     [TodoDataService],
     (service: TodoDataService) => {
       service.addTodoItem('do the shopping');
